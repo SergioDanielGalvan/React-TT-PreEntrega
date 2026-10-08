@@ -1,0 +1,14 @@
+[
+  { "nombre": "AMD", "logo": "/imagenes/Logos/LogoAMD.png" },
+  { "nombre": "Intel", "logo": "/imagenes/Logos/LogoIntel.png" },
+  { "nombre": "NVIDIA", "logo": "/imagenes/Logos/LogonVidia.png" },
+  { "nombre": "Gigabyte", "logo": "/imagenes/Logos/LogoGigabyte.png" },
+  { "nombre": "MSI", "logo": "/imagenes/Logos/LogoMSI.png" },
+  { "nombre": "ASUS", "logo": "/imagenes/Logos/LogoAsus.png" },
+  { "nombre": "Thermaltake", "logo": "/imagenes/Logos/LogoThermaltake.png" },
+  { "nombre": "Republic of Gamers", "logo": "/imagenes/Logos/LogoROG.png" },
+  { "nombre": "EVGA", "logo": "/imagenes/Logos/LogoEVGA.png" },
+  { "nombre": "XFX", "logo": "/imagenes/Logos/LogoXfX.png" },
+  { "nombre": "Western Digital", "logo": "/imagenes/Logos/LogoWD.png" },
+  { "nombre": "Alienware", "logo": "/imagenes/Logos/LogoAlienWare.png" }
+]

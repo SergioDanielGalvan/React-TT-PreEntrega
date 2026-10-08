@@ -1,0 +1,22 @@
+[
+  {
+    "id": "sergio",
+    "nombre": "Sergio Daniel Galván",
+    "rol": "Full Stack Developer",
+    "avatar": "/imagenes/equipo/sergio.png",
+    "github": "https://github.com/SergioDanielGalvan"
+  },
+  {
+    "id": "victor",
+    "nombre": "Victor Álvarez",
+    "rol": "Frontend Specialist",
+    "avatar": "/imagenes/equipo/victor.png"
+  },
+  {
+    "id": "alejandro",
+    "nombre": "Alejandro Rodríguez",
+    "rol": "Software & Logic Developer",
+    "avatar": "/imagenes/equipo/alejandro.png",
+    "github": "https://github.com/alerod88"
+  }
+]

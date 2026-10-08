@@ -1,10 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pre-entrega</title>
+    <title>Mundo Gaming · Hardware para tu setup gamer</title>
+    <meta name="description" content="Tienda de hardware gamer: placas madre AORUS, tarjetas de video y gabinetes Thermaltake. Pre-entrega React · Talento Tech." />
+    <meta name="author" content="Sergio Daniel Galván" />
+    <meta property="og:title" content="Mundo Gaming" />
+    <meta property="og:description" content="Hardware para tu setup gamer." />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Aplica el tema guardado antes de pintar, para evitar el "parpadeo" -->
+    <script>
+      try {
+        var t = localStorage.getItem('mg-tema');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-bs-theme', t);
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

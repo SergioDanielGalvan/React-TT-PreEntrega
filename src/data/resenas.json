@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "estrellas": 5,
+    "texto": "Compré la X670E AORUS XTREME y vuela. Llegó en 48 hs y bien embalada.",
+    "autor": "Martín G., Córdoba"
+  },
+  {
+    "id": 2,
+    "estrellas": 5,
+    "texto": "El gabinete DistroCase es una obra de arte. Atención impecable.",
+    "autor": "Lucía P., CABA"
+  },
+  {
+    "id": 3,
+    "estrellas": 4,
+    "texto": "Buenos precios en placas de video. La RTX 3080 Ti rinde tal cual la descripción.",
+    "autor": "Diego R., Rosario"
+  }
+]
