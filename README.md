@@ -16,6 +16,64 @@ npm run build    # build de producción en /dist
 npm run preview  # sirve el build
 ```
 
+## Cuentas y roles
+
+Las cuentas están "hardcodeadas" en `src/data/usuarios.json`, **sin contraseñas en texto plano**:
+cada usuario guarda un hash **PBKDF2-SHA256** (100.000 iteraciones) con una **sal aleatoria propia**
+(`src/utils/password.js`, Web Crypto API). Al ingresar se hashea lo que escribió el usuario y se
+compara con el JSON.
+
+| Rol | Correo |
+|-----|--------|
+| Administrador | `admin@mundogaming.com` |
+| Administrador | `ventas@mundogaming.com` |
+| Cliente | `cliente@mundogaming.com` |
+
+Las contraseñas de prueba se entregan aparte (no están en el repositorio).
+Cualquier otro correo válido con una contraseña de 6+ caracteres entra como **cliente**.
+
+**Agregar o cambiar una cuenta:**
+
+```bash
+npm run hash -- "nuevaContraseña"
+```
+
+Copiá `sal`, `hash` e `iteraciones` que imprime en el usuario del JSON (con `"rol": "admin"` si es
+administrador).
+
+> El hash no se puede revertir, pero el JSON viaja en el JavaScript del sitio y una contraseña débil
+> se puede adivinar probando. Por eso conviene usar contraseñas largas; en un sistema real el login
+> lo valida un backend. La verificación necesita `https` o `localhost` (Web Crypto).
+
+## Administración de productos (CRUD)
+
+Solo para administradores (`ProtectedRoute soloAdmin`). Un cliente que entra a `/admin` ve un 403.
+
+| Ruta | Qué hace |
+|------|----------|
+| `/admin/productos` | Listado con buscador, estado de cada producto (original / editado / nuevo) y acciones |
+| `/admin/productos/nuevo` | Alta |
+| `/admin/productos/editar/:id` | Edición (el formulario llega precargado) |
+| Botón **Eliminar** | Baja, con confirmación |
+
+**Cómo se guarda:** no hay backend, así que `public/productos.json` es la base y los cambios del
+admin (altas, ediciones y bajas) se guardan en `localStorage` y se aplican encima del `fetch`
+(`src/utils/catalogo.js`). Con **Exportar JSON** se descarga el catálogo con los cambios aplicados
+para reemplazar `public/productos.json` y publicarlos. **Restablecer** descarta los cambios.
+
+### Imágenes con ImgBB
+
+La imagen se puede **subir a [ImgBB](https://imgbb.com/)** desde el formulario o **pegar la URL** de
+una ya subida (por ejemplo, del álbum de la cuenta). Para subir hace falta la API key:
+
+1. Con la cuenta de ImgBB iniciada, entrá a <https://api.imgbb.com/> y copiá la key.
+2. **En local:** copiá `.env.example` como `.env.local` y pegá la key en `VITE_IMGBB_KEY`.
+   Reiniciá `npm run dev` para que Vite la lea. `.env.local` no se sube a GitHub.
+3. **En Vercel:** *Settings → Environment Variables* → `VITE_IMGBB_KEY` = tu key → *Redeploy*.
+
+> La API de ImgBB no permite elegir álbum: las imágenes quedan en la cuenta y se pueden mover al
+> álbum desde la web. La key también queda visible en el JavaScript del sitio.
+
 ## Requisitos de la pre-entrega
 
 | # | Requisito | Dónde está |
@@ -39,11 +97,11 @@ npm run preview  # sirve el build
   `AbortController` para cancelar el pedido si se cambia de página.
 - **Filtro por categoría** en `/productos?categoria=...` (el filtro queda en la URL).
 - **Carrito persistente** en `localStorage`; cantidades editables, eliminar ítems y vaciar.
-- **Ruta protegida** `/checkout`: requiere iniciar sesión (login simulado en `/login`) y redirige
-  de vuelta después de ingresar.
+- **Rutas protegidas:** `/checkout` requiere sesión; `/admin/...` requiere rol administrador.
 - **Dólar oficial** en la NavBar y precio aproximado en pesos en el detalle (dolarapi.com).
 - **Modo claro / oscuro** con `data-bs-theme` de Bootstrap (idea del TP grupal).
 - **Contacto con Formspree** usando `@formspree/react` (patrón del TP grupal).
+- **Contacto** con el formulario a la izquierda y el mapa de Google Maps del local a la derecha.
 - `ScrollToTop` al cambiar de ruta, página 404 y carrusel de imágenes hecho con hooks.
 
 ## Estructura
@@ -58,9 +116,11 @@ src/
     layout/                 Layout, Header, NavBar, Footer, TeamCard
     Item, ItemList, ItemDetail, ItemCount, CartWidget, ...
   pages/                    Home, ItemListContainer, ItemDetailContainer, Cart, Checkout, Login, Contacto, NotFound
+  pages/admin/              AdminProductos (listado), ProductoForm (alta/edición)
   context/                  CartContext + CartProvider, AuthContext + AuthProvider
-  hooks/                    useCart, useAuth, useDolar
-  data/                     equipo, reseñas y marcas (JSON)
+  hooks/                    useCart, useAuth, useDolar, useCatalogo
+  data/                     usuarios, equipo, reseñas y marcas (JSON)
+  utils/                    formato de precios, imgbb.js (subida), catalogo.js (CRUD)
   styles/index.css          tema Mundo Gaming sobre Bootstrap 5
 ```
 

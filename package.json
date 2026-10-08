@@ -24,7 +24,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "hash": "node scripts/hash-password.mjs"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

@@ -11,17 +11,22 @@ function Login() {
   const [correo, setCorreo] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [verificando, setVerificando] = useState(false)
 
   // Si ya hay sesión, no tiene sentido mostrar el formulario.
   if (usuario) return <Navigate to={destino} replace />
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setError('')
+    setVerificando(true)
     try {
-      login(correo.trim(), password)
+      // login es async: calcula el hash de la contraseña antes de comparar
+      await login(correo.trim(), password)
       navigate(destino, { replace: true })
     } catch (err) {
       setError(err.message)
+      setVerificando(false)
     }
   }
 
@@ -32,8 +37,8 @@ function Login() {
           <h1 className="h3 mb-1">Ingresar</h1>
           <p className="text-suave small mb-4">
             {location.state?.desde
-              ? 'Iniciá sesión para continuar con tu compra.'
-              : 'Login de demostración: cualquier correo válido y una contraseña de 6+ caracteres.'}
+              ? 'Iniciá sesión para continuar.'
+              : 'Clientes: cualquier correo válido y una contraseña de 6+ caracteres. Administradores: usá tu cuenta asignada.'}
           </p>
 
           {error && (
@@ -68,8 +73,8 @@ function Login() {
               required
             />
           </div>
-          <button type="submit" className="btn btn-acento w-100">
-            Ingresar
+          <button type="submit" className="btn btn-acento w-100" disabled={verificando}>
+            {verificando ? 'Verificando…' : 'Ingresar'}
           </button>
         </form>
       </div>

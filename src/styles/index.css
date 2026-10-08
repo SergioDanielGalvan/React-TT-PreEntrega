@@ -660,3 +660,96 @@ a:focus-visible, button:focus-visible, .form-control:focus-visible {
   .carrito-fila img { width: 56px; height: 56px; }
   .carrito-fila__subtotal { grid-column: 2; }
 }
+
+/* ---------- Formularios anchos (contacto en 2 columnas, admin) ---------- */
+.mg-form--ancho { max-width: none; margin: 0; }
+.mg-form .form-select {
+  background-color: var(--superficie-2);
+  border: 1px solid var(--borde);
+  color: var(--texto);
+}
+
+/* ---------- Mapa de contacto ---------- */
+.mapa {
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.mapa iframe {
+  flex: 1;
+  width: 100%;
+  min-height: 320px;
+  border: 0;
+}
+.mapa__pie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid var(--borde);
+}
+
+/* ---------- Admin de productos ---------- */
+.admin-preview {
+  display: block;
+  max-width: 100%;
+  max-height: 220px;
+  border-radius: 12px;
+  border: 1px solid var(--borde);
+  object-fit: contain;
+  background: var(--superficie-2);
+}
+
+/* ---------- Panel de administración ---------- */
+.admin-buscador { max-width: 360px; }
+.mg-form .form-control:disabled { opacity: 0.55; }
+.admin-tabla {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+}
+.admin-tabla .table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--texto);
+  --bs-table-border-color: var(--borde);
+}
+.admin-tabla th {
+  color: var(--texto-suave);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.admin-tabla th,
+.admin-tabla td { padding: 0.75rem 1rem; }
+.admin-miniatura {
+  width: 48px; height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.admin-imagen {
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 0.75rem 1rem 1rem;
+}
+.admin-imagen legend {
+  float: none;
+  width: auto;
+  padding: 0 0.4rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+.admin-preview--vacia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}

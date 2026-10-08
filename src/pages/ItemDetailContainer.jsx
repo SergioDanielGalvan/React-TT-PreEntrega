@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import ItemDetail from '../components/ItemDetail.jsx'
 import { Cargando, ErrorCarga } from '../components/Estado.jsx'
 import { RUTA_PRODUCTOS } from '../utils/api.js'
+import { aplicarCambios } from '../utils/catalogo.js'
 
 /** Lee :id de la URL, busca ese producto y muestra <ItemDetail />. */
 function ItemDetailContainer() {
@@ -22,7 +23,7 @@ function ItemDetailContainer() {
         const respuesta = await fetch(RUTA_PRODUCTOS, { signal: controller.signal })
         if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`)
         const datos = await respuesta.json()
-        setProducto(datos.find((p) => p.id === id) ?? null)
+        setProducto(aplicarCambios(datos).find((p) => p.id === id) ?? null)
       } catch (err) {
         if (err.name !== 'AbortError') setError('No se pudo cargar el producto.')
       } finally {

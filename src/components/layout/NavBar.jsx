@@ -14,7 +14,7 @@ const SECCIONES = [
 function NavBar() {
   // El menú hamburguesa se controla con estado de React (sin el JS de Bootstrap)
   const [abierto, setAbierto] = useState(false)
-  const { usuario, logout } = useAuth()
+  const { usuario, esAdmin, logout } = useAuth()
   const navigate = useNavigate()
 
   const cerrar = () => setAbierto(false)
@@ -57,6 +57,13 @@ function NavBar() {
                 </NavLink>
               </li>
             ))}
+            {esAdmin && (
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/admin/productos" onClick={cerrar}>
+                  Admin
+                </NavLink>
+              </li>
+            )}
           </ul>
 
           <div className="d-flex flex-wrap align-items-center gap-3 me-lg-3">
@@ -66,6 +73,7 @@ function NavBar() {
               <span className="d-flex align-items-center gap-2">
                 <span className="text-suave small">
                   Hola, <strong className="text-body">{usuario.nombre}</strong>
+                  {esAdmin && <span className="badge text-bg-info ms-1">admin</span>}
                 </span>
                 <button className="btn btn-sm btn-borde" onClick={cerrarSesion}>
                   Salir

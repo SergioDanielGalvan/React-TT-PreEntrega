@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import ItemList from '../components/ItemList.jsx'
 import { Cargando, ErrorCarga } from '../components/Estado.jsx'
 import { RUTA_PRODUCTOS } from '../utils/api.js'
+import { aplicarCambios } from '../utils/catalogo.js'
 
 /**
  * Contenedor del catálogo: trae los productos de productos.json con
@@ -32,7 +33,8 @@ function ItemListContainer({ soloDestacados = false }) {
         const respuesta = await fetch(RUTA_PRODUCTOS, { signal: controller.signal })
         if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`)
         const datos = await respuesta.json()
-        setProductos(datos)
+        // Aplica altas, ediciones y bajas hechas desde el panel de administración
+        setProductos(aplicarCambios(datos))
       } catch (err) {
         if (err.name !== 'AbortError') setError('No se pudieron cargar los productos.')
       } finally {

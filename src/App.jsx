@@ -10,6 +10,8 @@ import Cart from './pages/Cart.jsx'
 import Checkout from './pages/Checkout.jsx'
 import Login from './pages/Login.jsx'
 import Contacto from './pages/Contacto.jsx'
+import AdminProductos from './pages/admin/AdminProductos.jsx'
+import ProductoForm from './pages/admin/ProductoForm.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 function App() {
@@ -33,6 +35,32 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <Checkout />
+                  </ProtectedRoute>
+                }
+              />
+
+              {/* CRUD de productos: solo cuentas con rol "admin" */}
+              <Route
+                path="/admin/productos"
+                element={
+                  <ProtectedRoute soloAdmin>
+                    <AdminProductos />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin/productos/nuevo"
+                element={
+                  <ProtectedRoute soloAdmin>
+                    <ProductoForm />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin/productos/editar/:id"
+                element={
+                  <ProtectedRoute soloAdmin>
+                    <ProductoForm />
                   </ProtectedRoute>
                 }
               />
