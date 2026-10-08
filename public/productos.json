@@ -5,7 +5,7 @@
     "categoria": "Placas Madre",
     "precio": 260,
     "url": "https://www.aorus.com/es-ar/motherboards/x570s-aorus-master-rev-10/Key-Features",
-    "imagen": "/imagenes/productos/mother1.jpg",
+    "imagen": "https://i.ibb.co/S4rTXr4Z/mother-1.jpg",
     "specs": [
       "Socket AMD AM4",
       "Chipset X570",
@@ -22,7 +22,7 @@
     "categoria": "Placas Madre",
     "precio": 345,
     "url": "https://www.gigabyte.com/Motherboard/Z690-AORUS-ELITE-AX-rev-1x",
-    "imagen": "/imagenes/productos/mother2.jpg",
+    "imagen": "https://i.ibb.co/5XMvscKv/mother-2.jpg",
     "specs": [
       "Socket Intel LGA1700 (Gen 12)",
       "Chipset Z690",
@@ -38,7 +38,7 @@
     "categoria": "Placas Madre",
     "precio": 355,
     "url": "https://www.gigabyte.com/Motherboard/X670E-AORUS-XTREME-rev-1x",
-    "imagen": "/imagenes/productos/mother3.jpg",
+    "imagen": "https://i.ibb.co/cXDM49hH/mother-3.jpg",
     "specs": [
       "Socket AMD AM5 (Zen 4)",
       "Chipset X670E",
@@ -54,7 +54,7 @@
     "categoria": "Placas Madre",
     "precio": 315,
     "url": "https://www.gigabyte.com/Motherboard/Z590-AORUS-XTREME-rev-10",
-    "imagen": "/imagenes/productos/mother4.jpg",
+    "imagen": "https://i.ibb.co/1jqdhyH/mother4.jpg",
     "specs": [
       "Socket Intel LGA1200 (Gen 11)",
       "Chipset Z590",
@@ -70,7 +70,7 @@
     "categoria": "Tarjetas de Video",
     "precio": 2160,
     "url": "https://www.gigabyte.com/Graphics-Card/GV-N309TAORUSX-W-24GD/sp",
-    "imagen": "/imagenes/productos/video1.jpg",
+    "imagen": "https://i.ibb.co/DP7PRn6b/video1.jpg",
     "specs": [
       "GPU GeForce RTX 3090 Ti",
       "24 GB GDDR6X",
@@ -85,7 +85,7 @@
     "categoria": "Tarjetas de Video",
     "precio": 980,
     "url": "https://www.gigabyte.com/Graphics-Card/GV-R695XTAORUSX-WB-16GD",
-    "imagen": "/imagenes/productos/video2.jpg",
+    "imagen": "https://i.ibb.co/xSmWkXX3/video2.jpg",
     "specs": [
       "GPU Radeon RX 6950 XT",
       "16 GB GDDR6",
@@ -100,7 +100,7 @@
     "categoria": "Tarjetas de Video",
     "precio": 650,
     "url": "https://www.gigabyte.com/ar/Graphics-Card/GV-N308TAORUSX-WB-12GD/sp",
-    "imagen": "/imagenes/productos/video3.jpg",
+    "imagen": "https://i.ibb.co/zhfR0LHm/video3.jpg",
     "specs": [
       "GPU GeForce RTX 3080 Ti",
       "12 GB GDDR6X",
@@ -115,7 +115,7 @@
     "categoria": "Tarjetas de Video",
     "precio": 870,
     "url": "https://www.gigabyte.com/Graphics-Card/GV-R68XTAORUS-M-16GC",
-    "imagen": "/imagenes/productos/video4.jpg",
+    "imagen": "https://i.ibb.co/VY463tSP/video4.jpg",
     "specs": [
       "GPU Radeon RX 6800 XT",
       "16 GB GDDR6",
@@ -131,7 +131,7 @@
     "categoria": "Gabinetes",
     "precio": 190,
     "url": "https://www.thermaltake.com/core-p8-tempered-glass-full-tower-chassis.html",
-    "imagen": "/imagenes/productos/chasis1.jpg",
+    "imagen": "https://i.ibb.co/WvQ0Z3tr/chasis1.jpg",
     "specs": [
       "Full Tower",
       "Vidrio templado en 3 lados",
@@ -146,7 +146,7 @@
     "categoria": "Gabinetes",
     "precio": 420,
     "url": "https://www.thermaltake.com/core-p3-tg.html",
-    "imagen": "/imagenes/productos/chasis2.jpg",
+    "imagen": "https://i.ibb.co/xtGzbp2R/chasis2.jpg",
     "specs": [
       "Mid Tower abierto",
       "Vidrio templado",
@@ -162,7 +162,7 @@
     "categoria": "Gabinetes",
     "precio": 560,
     "url": "https://www.thermaltake.com/distrocasetm-350p-mid-tower-chassis.html",
-    "imagen": "/imagenes/productos/chasis6.jpg",
+    "imagen": "https://i.ibb.co/SwzTJGch/chasis6.jpg",
     "specs": [
       "Mid Tower",
       "DistroPlate integrada",
@@ -177,7 +177,7 @@
     "categoria": "Gabinetes",
     "precio": 130,
     "url": "https://www.thermaltake.com/thermaltake-divider-370-tg-snow-argb-mid-tower-chassis.html",
-    "imagen": "/imagenes/productos/chasis4.jpg",
+    "imagen": "https://i.ibb.co/qM0FQ0FF/chasis4.jpg",
     "specs": [
       "Mid Tower",
       "Edición Snow (blanco)",
@@ -192,7 +192,7 @@
     "categoria": "Gabinetes",
     "precio": 95,
     "url": "https://www.thermaltake.com/v200-tempered-glass-edition.html",
-    "imagen": "/imagenes/productos/chasis7.jpg",
+    "imagen": "https://i.ibb.co/0yywB1gp/chasis7.jpg",
     "specs": [
       "Mid Tower",
       "Vidrio templado",
