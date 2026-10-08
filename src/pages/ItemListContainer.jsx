@@ -61,6 +61,7 @@ function ItemListContainer({ soloDestacados = false }) {
     <ItemList
       productos={visibles}
       columnas={soloDestacados ? 'col-12 col-sm-6 col-lg-4' : undefined}
+      marcarDestacados={!soloDestacados}
     />
   )
 

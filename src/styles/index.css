@@ -275,6 +275,7 @@ a:hover { color: var(--acento-b); }
 .card-producto__media {
   position: relative;
   aspect-ratio: 4 / 3;
+  overflow: hidden; /* sin esto, una imagen muy alta estira la card */
   background: var(--superficie-2);
   display: block;
 }
@@ -291,6 +292,19 @@ a:hover { color: var(--acento-b); }
   padding: 3px 8px;
   border-radius: 999px;
 }
+.card-producto__destacado {
+  position: absolute; top: 10px; right: 10px;
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #1a1300;
+  background: linear-gradient(135deg, #fde68a, #f59e0b);
+  padding: 3px 9px 3px 7px;
+  border-radius: 999px;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.45);
+}
+.card-producto--destacado { border-color: rgba(245, 158, 11, 0.55); }
+.card-producto--destacado:hover { border-color: #f59e0b; }
 .card-producto__cuerpo {
   display: flex;
   flex-direction: column;

@@ -1,7 +1,7 @@
 import Item from './Item.jsx'
 
 /** Grilla responsive que renderiza un <Item /> por producto. */
-function ItemList({ productos, columnas = 'col-12 col-sm-6 col-lg-4 col-xl-3' }) {
+function ItemList({ productos, columnas = 'col-12 col-sm-6 col-lg-4 col-xl-3', marcarDestacados = false }) {
   if (productos.length === 0) {
     return <p className="estado">No hay productos en esta categoría.</p>
   }
@@ -10,7 +10,7 @@ function ItemList({ productos, columnas = 'col-12 col-sm-6 col-lg-4 col-xl-3' })
     <div className="row g-4">
       {productos.map((producto) => (
         <div className={columnas} key={producto.id}>
-          <Item {...producto} />
+          <Item {...producto} marcarDestacado={marcarDestacados} />
         </div>
       ))}
     </div>
